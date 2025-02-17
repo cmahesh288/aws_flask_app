@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 320px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            background-color: white;
+            border: 1px solid #000;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        label {
+            color: #000;
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input:focus {
+            border-color: #000;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: navy;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #003366;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #003366;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <form action="{{ url_for('registration') }}" method="POST" enctype="multipart/form-data">
+        <label for="username">User Name:</label>
+        <input id="username" name="username" type="text" class="input" placeholder="User Name" autocomplete="off"
+               required/>
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" class="input" placeholder="Password" autocomplete="off"
+               required/>
+        <label for="firstname">First Name:</label>
+        <input id="firstname" name="firstname" type="text" class="input" placeholder="First Name" autocomplete="off"
+               required/>
+        <label for="lastname">Last Name:</label>
+        <input id="lastname" name="lastname" type="text" class="input" placeholder="Last Name" autocomplete="off"
+               required/>
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text" class="input" placeholder="Email" autocomplete="off" required/>
+        <label for="email">Address:</label>
+        <input id="email" name="address" type="text" class="input" placeholder="Address" autocomplete="off" required/>
+        <label for="textfile">Upload File:</label>
+        <input type="file" id="textfile" name="textfile" class="input" required/>
+        <button type="submit">Register</button>
+    </form>
+    <a href="{{ url_for('login') }}">Have an account already? Login here</a>
+</div>
+</body>
+</html>

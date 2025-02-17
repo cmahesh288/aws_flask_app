@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 320px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            background-color: white;
+            border: 1px solid #000;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        label {
+            color: #000;
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input:focus {
+            border-color: #000;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: navy;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #003366;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #003366;
+            text-decoration: underline;
+        }
+</style>
+</head>
+
+<body>
+    <div class="card">
+        <div><h1>User Profile</h1></div>
+        <div>
+                <div>
+                    <label><b>First Name:</b></label>
+                    <input class="input" type="text" value={{user.firstName}} readonly/> <br><br>
+
+                    <label><b>Last Name:</b></label>
+                    <input class="input" type="text" value={{user.lastName}} readonly/> <br><br>
+
+                    <label><b>Email:</b></label>
+                    <input class="input" type="email" value={{user.email}} readonly/> <br><br>
+
+                    <label><b>Address:</b></label>
+                    <input class="input" type="address" value={{user.address}} readonly/> <br><br>
+
+                    <label><b>Count:</b></label>
+                    <input class="input" type="number" value={{user.count}} readonly/> <br><br>
+                    <a href="{{url_for('login')}}"><button>Logout</button></a>
+                    <a href="/download"><button>Download</button></a>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
